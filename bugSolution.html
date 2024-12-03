@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    // Correctly accessing the innerHTML of an existing element
+    let element = document.getElementById('myDiv');
+    if (element) {
+      element.innerHTML = "<p>This text is now changed</p>";
+    } else {
+      console.error("Element not found");
+    }
+
+    // Avoid changing read-only attributes; if modification is needed, consider using CSS or alternative approaches
+
+    // Use a valid and non-reserved ID
+    let validId = document.getElementById('myValidId');
+    if(validId){
+        validId.innerHTML = "This will work";
+    }
+    else{
+        console.error("Element with valid ID not found");
+    }
+  </script>
+</body>
+</html>
