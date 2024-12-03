@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    // Incorrectly accessing the innerHTML of a non-existent element
+    let element = document.getElementById('nonExistent');
+    if (element) {
+      element.innerHTML = "<p>This should not be printed</p>";
+    } else {
+      console.error("Element not found");
+    }
+
+    // Try to change a read-only attribute
+    document.body.setAttribute('readonly', 'true');
+
+    // Incorrectly using a reserved word as an ID
+    document.getElementById('class').innerHTML = "This will likely fail";
+  </script>
+</body>
+</html>
